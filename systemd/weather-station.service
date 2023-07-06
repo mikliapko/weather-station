@@ -1,0 +1,14 @@
+[Unit]
+Description=Weather Station service
+After=multi-user.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+Restart=always
+ExecStart=python /home/pi/weather-station/main.py
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target
